@@ -33,11 +33,11 @@ int main()
 	} while ((rpt == 's') || (rpt == 'S'));
 
 	cout << "\nMostrando los elementos de la pila: \n";
-	while (pila != NULL)
-	{
-		sacarPila(pila, dato);
+	while (pila != NULL) //Bucle que recorre la Pila mientras contenga elementos
+	{					//Imprime cada elemento de Pila y lo elimina
+		sacarPila(pila, dato); 
 
-		if (pila != NULL)
+		if (pila != NULL)  
 		{
 			cout << dato << " , \n";
 		}
@@ -51,7 +51,7 @@ int main()
 	return 0;
 }
 
-void agregarPila(Nodo *&pila, int n)
+void agregarPila(Nodo *&pila, int n) //Función que Agrega un Elemento a la Pila
 {
 	Nodo *nuevo_nodo = new Nodo();
 	nuevo_nodo->dato = n;
@@ -61,7 +61,7 @@ void agregarPila(Nodo *&pila, int n)
 	cout << "\tElemento " << n << " agregado a PILA correctamente";
 }
 
-void sacarPila(Nodo *&pila, int &n)
+void sacarPila(Nodo *&pila, int &n) // Función que Elimina un Elemento a la Pila
 {
 	Nodo *aux = pila;
 	n = aux->dato;
