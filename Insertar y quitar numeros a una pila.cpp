@@ -1,6 +1,6 @@
 /*Ejercicio : Hacer un programa para agregar numeros enteros a una pila, hasta que el
 usuario lo decida, después mostrar todos los numeros introducidos en la pila.*/
-//Por Aneudy Patiño & Lester Vásquez 
+//Por Aneudy Patiño & Lester Vásquez UAPA
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
