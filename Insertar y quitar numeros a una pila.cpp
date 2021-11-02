@@ -1,24 +1,24 @@
-/*Ejercicio : Hacer un programa para agregar números enteros a una pila, hasta que el
-usuario lo decida, después mostrar todos los números introducidos en la pila.*/
+/*Ejercicio : Hacer un programa para agregar numeros enteros a una pila, hasta que el
+usuario lo decida, después mostrar todos los numeros introducidos en la pila.*/
 //Por Aneudy Patiño & Lester Vásquez 
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
 using namespace std;
 
-struct Nodo
+struct Nodo  //Crea la estructura del Nodo
 {
-	int dato;
-	Nodo *siguiente;
+	int dato; //Elemento Intero numerico
+	Nodo *siguiente; //Puntero en memoria hacia abajo al siguiente Nodo
 };
 
-//Prototipos de Funci�n
-void agregarPila(Nodo *&, int);
-void sacarPila(Nodo *&, int &);
+//Funciones
+void agregarPila(Nodo *&, int); //Agrega un elemento al nodo por referencia *& de tipo Entero
+void sacarPila(Nodo *&, int &); //Elimina un elemento al nodo por referencia *& de tipo Entero
 
 int main()
 {
-	Nodo *pila = NULL; //Inicializamos pila
+	Nodo *pila = NULL; //Inicializamos pila vacia
 	int dato;
 	char rpt;
 	cout << "\n*** ALGORITMO DE UNA PILA ***\n\n";
@@ -32,16 +32,16 @@ int main()
 		cin >> rpt;
 	} while ((rpt == 's') || (rpt == 'S'));
 
-	cout << "\nMostrando los elementos de la pila: \n";
+	cout << "\nSacando elementos de la PILA: \n";
 	while (pila != NULL) //Bucle que recorre la Pila mientras contenga elementos
-	{					//Imprime cada elemento de Pila y lo elimina
-		sacarPila(pila, dato); 
+	{					
+		sacarPila(pila, dato); //Llamo funcion 
 
-		if (pila != NULL)  
+		if (pila != NULL)  //Condicion si la Pila no esta vacia 
 		{
-			cout << dato << " , \n";
+			cout << dato << " ,"; //Imprime el valor y una coma (,)
 		}
-		else
+		else  //Imprime el valor y coloca un punto final (.)
 		{
 			cout << dato << ".";
 		}
@@ -51,20 +51,20 @@ int main()
 	return 0;
 }
 
-void agregarPila(Nodo *&pila, int n) //Función que Agrega un Elemento a la Pila
+void agregarPila(Nodo *&pila, int n) //Agrega un Elemento a la Pila por referencia, un valor Entero
 {
-	Nodo *nuevo_nodo = new Nodo();
-	nuevo_nodo->dato = n;
-	nuevo_nodo->siguiente = pila;
-	pila = nuevo_nodo;
+	Nodo *nuevo_nodo = new Nodo(); //Reservamos la memoria del Nodo
+	nuevo_nodo->dato = n;  //Cargamos el valor dentro del nodo(dato) 
+	nuevo_nodo->siguiente = pila; //Cargamos el puntero siguiente con el valor de pila
+	pila = nuevo_nodo; //Asignar el nuevo nodo a pila
 
-	cout << "\tElemento " << n << " agregado a PILA correctamente";
+	cout << "\tElemento " << n << " agregado a PILA correctamente"; //Mostrar el valor agregado
 }
 
-void sacarPila(Nodo *&pila, int &n) // Función que Elimina un Elemento a la Pila
+void sacarPila(Nodo *&pila, int &n) // Elimina un Elemento de la Pila con datos por referencia
 {
-	Nodo *aux = pila;
-	n = aux->dato;
-	pila = aux->siguiente;
-	delete aux;
+	Nodo *aux = pila; //Variable auxiliar de tipo Nodo que apunta a la cima
+	n = aux->dato; //Asignamos el valor del nodo Pila en la cima
+	pila = aux->siguiente; //pasamos al Nodo siguiente
+	delete aux; //Eliminamos el valor de la cima
 }
