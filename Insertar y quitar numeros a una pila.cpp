@@ -1,5 +1,5 @@
-/*Ejercicio : Hacer un programa para agregar numeros enteros a una pila, hasta que el
-usuario lo decida, después mostrar todos los numeros introducidos en la pila.*/
+/*Ejercicio : Hacer un programa para agregar elementos una pila (PUSH), hasta que el
+usuario lo decida, después eliminar dichos elementos (POP).*/
 //Por Aneudy Patiño & Lester Vásquez UAPA
 #include <iostream>
 #include <conio.h>
